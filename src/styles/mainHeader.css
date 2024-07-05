@@ -1,0 +1,42 @@
+body {
+  margin: 0px;
+}
+
+.mainHeader {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(193, 193, 193);
+  color: white;
+  text-shadow: black 2px 2px 15px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid black;
+}
+.mainHeader ul {
+  width: 100%;
+  display: flex;
+}
+
+.mainHeader li {
+  justify-content: center;
+  display: flex;
+  width: 20%;
+  text-align: center;
+}
+
+.mainHeader li:hover {
+  color: black;
+  text-shadow: white 2px 2px 10px;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 700px) {
+  .mainHeader li {
+    font-size: 13px;
+  }
+
+  .mainHeader li:hover {
+    color: black;
+    text-shadow: white 2px 2px 10px;
+    font-size: 13px;
+  }
+}

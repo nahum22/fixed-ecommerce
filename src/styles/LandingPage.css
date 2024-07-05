@@ -1,0 +1,45 @@
+.productCard {
+}
+
+.productsContainer {
+  display: flex;
+}
+
+/* LandingPage.css */
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.productCard {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(30% - 40px); /* Adjust based on your design needs */
+  max-width: 300px; /* Ensures responsiveness */
+}
+
+.productCard h2 {
+  margin: 0;
+  padding: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.productCard p {
+  padding: 10px;
+  color: #666;
+}
+
+.productCard img {
+  max-height: 300px;
+}
+
+.filledHeart img {
+  width: 23px;
+  height: 24px;
+  left: auto;
+}

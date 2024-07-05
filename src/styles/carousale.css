@@ -1,0 +1,77 @@
+/* General Carousel Styling */
+.carousel-root {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #e0e0e0, grey, #ffffff, grey);
+}
+
+.carousel-slider {
+  box-shadow: 3px 3px 3px #f2af26;
+}
+
+.carousel {
+  max-width: 800px;
+}
+
+.carousel.control-dots {
+  background-color: #333;
+}
+
+.carousel.control-dots.active {
+  background-color: #555;
+}
+
+.carousel.control-arrow-prev,
+.carousel.control-arrow-next {
+  color: #fff;
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+.carousel.control-arrow-prev:hover,
+.carousel.control-arrow-next:hover {
+  opacity: 1;
+}
+
+.carousel.slide {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel.slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel.legend {
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  .carousel.control-dots {
+    display: none;
+  }
+
+  .carousel.control-arrow-prev,
+  .carousel.control-arrow-next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+
+  .carousel.control-arrow-prev {
+    left: -30px;
+  }
+
+  .carousel.control-arrow-next {
+    right: -30px;
+  }
+}
