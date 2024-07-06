@@ -20,6 +20,8 @@
   overflow: hidden;
   width: calc(30% - 40px); /* Adjust based on your design needs */
   max-width: 300px; /* Ensures responsiveness */
+  margin-bottom: 150px;
+  margin-top: 100px;
 }
 
 .productCard h2 {
@@ -42,4 +44,8 @@
   width: 23px;
   height: 24px;
   left: auto;
+}
+
+.heartIcon {
+  width: 50px;
 }
