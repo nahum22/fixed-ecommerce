@@ -116,6 +116,14 @@ export const AppProvider = ({ children }) => {
     }
   };
 
+  const handleSignOut = async () => {
+    try {
+      await firebase.auth().signOut();
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
   const handleUpdate = async (itemId, updatedValues) => {
     try {
       const dbRef = firebase.database().ref("products");
@@ -166,6 +174,7 @@ export const AppProvider = ({ children }) => {
         error,
         loading,
         user,
+        handleSignOut,
         addProduct,
         handleAddProduct,
         handleUpdate,

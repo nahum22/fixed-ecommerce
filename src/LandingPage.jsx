@@ -110,17 +110,6 @@ const LandingPage = () => {
       <FirstNavbar />
       <main className="content">
         <CarouselPage />
-        <h2>Data from Firebase Realtime Database:</h2>
-        <div>
-          {user ? (
-            <>
-              <span>Logged in as {user.displayName}</span>
-              <button onClick={logout}>Logout</button>
-            </>
-          ) : (
-            <button onClick={loginWithGoogle}>Login with Google</button>
-          )}
-        </div>
         <div className="productsContainer">
           {products.map((item) => (
             <div className="productCard" key={item.id}>
