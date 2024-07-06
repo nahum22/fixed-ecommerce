@@ -39,7 +39,6 @@ const handleSignOut = async () => {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app); // Use getFirestore to initialize Firestore
-const analytics = getAnalytics(app);
 
 // No need for the following lines as the app is already initialized above
 // if (!firebase.apps.length) {
