@@ -15,7 +15,7 @@ const FirstNavbar = () => {
     setIsOpen(false); // Close the dropdown after selection
   };
 
-  const { products, categories } = useGlobalContext();
+  const { products, categories, filterCategories } = useGlobalContext();
 
   return (
     <nav className="mainHeader">
@@ -27,7 +27,11 @@ const FirstNavbar = () => {
         {isOpen && (
           <div className="categoriesMenue">
             {categories.map((item) => (
-              <div key={item} className="categorieMenue">
+              <div
+                key={item}
+                className="categorieMenue"
+                onClick={filterCategories}
+              >
                 {item}
               </div>
             ))}

@@ -11,7 +11,8 @@ import emptyHeart from "./images/emptyHeart.png";
 
 const LandingPage = () => {
   const [data, setData] = useState([]);
-  const { products, categories, loginWithGoogle, user, logout } =
+  
+  const {filteredProducts ,products, categories, loginWithGoogle, user, logout } =
     useGlobalContext();
   const [favorites, setFavorites] = useState([]);
 
@@ -111,7 +112,7 @@ const LandingPage = () => {
       <main className="content">
         <CarouselPage />
         <div className="productsContainer">
-          {products.map((item) => (
+          {filteredProducts.map((item) => (
             <div className="productCard" key={item.id}>
               <div>
                 <img src={item.imageUrl} alt={item.name} />

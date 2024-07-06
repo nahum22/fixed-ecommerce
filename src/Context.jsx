@@ -12,6 +12,8 @@ export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredSetProducts] = useState([]);
+
   const [categories, setCategories] = useState([]);
   const [user, setUser] = useState(null);
   const [favorites, setFavorites] = useState([]);
@@ -81,6 +83,7 @@ export const AppProvider = ({ children }) => {
       }));
 
       setProducts(dataArray);
+      setFilteredSetProducts(dataArray);
       getCategories();
     });
 
@@ -89,9 +92,19 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log(products);
+    console.log(products, 444);
     getCategories();
   }, [products]);
+
+  const filterCategories = (e) => {
+    setFilteredSetProducts(products);
+    // Assuming 'products' is defined elsewhere in your scope
+    //  return products;
+    setFilteredSetProducts(
+      products.filter((item) => item.categoryName === e.target.textContent)
+    );
+    // Do something with 'filteredProducts', such as updating the UI or storing it
+  };
 
   const handleAddProduct = async (product) => {
     setLoading(true);
@@ -167,13 +180,15 @@ export const AppProvider = ({ children }) => {
     console.log(Object.keys(result));
     setCategories(Object.keys(result));
   };
-
   return (
     <AppContext.Provider
       value={{
         error,
         loading,
         user,
+        filteredProducts,
+        filterCategories,
+        setFilteredSetProducts,
         handleSignOut,
         addProduct,
         handleAddProduct,
