@@ -18,6 +18,41 @@ export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [favorites, setFavorites] = useState([]);
 
+  const showOnlyFavorites = () => {
+    const db = firebase.database();
+    const userId = user.uid;
+
+    const dbRef = db.ref(`favorites/${userId}`)
+
+    dbRef.on("value", (snapshot) => {
+      const data = snapshot.val();
+      const dataArray = Object.entries(data || {}).map(([key, value]) => ({
+        id: key,
+        ...value,
+      }));
+
+
+      setFilteredSetProducts(dataArray);
+   
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  };
+
   const fetchFavorites = (userId) => {
     if (!user) return; // Ensure the user is authenticated
     const db = firebase.database();
@@ -195,6 +230,7 @@ export const AppProvider = ({ children }) => {
         handleUpdate,
         handleDelete,
         loginWithGoogle,
+        showOnlyFavorites,
         products,
         categories,
       }}

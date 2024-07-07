@@ -15,14 +15,15 @@ const FirstNavbar = () => {
     setIsOpen(false); // Close the dropdown after selection
   };
 
-  const { products, categories, filterCategories } = useGlobalContext();
+  const { products, categories, filterCategories, showOnlyFavorites } =
+    useGlobalContext();
 
   return (
     <nav className="mainHeader">
       <ul>
         <li>איתור הזמנה |</li>
         <li>החשבון שלי |</li>
-        <li> פריטים מועדפים |</li>
+        <li onClick={showOnlyFavorites}> פריטים מועדפים |</li>
         <li onClick={toggleDropdown}>מוצרים |</li>
         {isOpen && (
           <div className="categoriesMenue">
