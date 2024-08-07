@@ -13,7 +13,6 @@
 }
 
 .carousel {
-  max-width: 800px;
 }
 
 .carousel.control-dots {
@@ -58,6 +57,9 @@
     display: none;
   }
 
+  .productCard img {
+    width: 100px;
+  }
   .carousel.control-arrow-prev,
   .carousel.control-arrow-next {
     display: block;
@@ -77,6 +79,5 @@
 }
 
 .carousel img {
-  max-width: 500px;
-  max-height: 500px;
+  width: 100%;
 }

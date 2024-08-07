@@ -4,6 +4,10 @@
 
 /* LandingPage.css */
 
+.event-list-header {
+  text-align: center !important;
+}
+
 .productsContainer {
   justify-content: center;
   width: 100%;
@@ -11,12 +15,12 @@
   margin-left: 5%;
   margin-right: 5%;
 
-  grid-template-columns: repeat(2, 1fr); //* 3 columns for tablets */
+  grid-template-columns: repeat(4, 1fr); //* 3 columns for tablets */
 }
 
 @media (min-width: 768px) {
   .productsContainer {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    grid-template-columns: repeat(4, 1fr); /* 3 columns for tablets */
   }
 }
 
